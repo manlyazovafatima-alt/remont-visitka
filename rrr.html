@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Евроремонт Под Ключ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Верхняя часть - визитка */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        /* Белая полупрозрачная визитка */
+        .visiting-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 15px;
+            color: #333;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+
+        .company-tagline {
+            font-style: italic;
+            font-size: 1rem;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Нижняя часть - услуги */
+        .services-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .services-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .service-tags {
+            font-style: italic;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Контакты и CTA */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #ffed4a;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .visiting-card {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Верхняя часть - визитка -->
+        <section class="hero-section">
+            <div class="visiting-card">
+                <h1 class="hero-title">ЕВРОРЕМОНТ ПОД КЛЮЧ</h1>
+                <p class="hero-subtitle">Превратим вашу квартиру в современное, комфортное пространство. Гарантия качества и точные сроки.</p>
+                
+                <div class="company-name">PROF-REMENT</div>
+                <p class="company-tagline">Ваш комфорт — наша работа</p>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span style="font-size: 2rem;">👇</span>
+                <p>Листайте вниз</p>
+            </div>
+        </section>
+
+        <!-- Нижняя часть - услуги -->
+        <section class="services-section">
+            <h2 class="services-title">НАШИ УСЛУГИ</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>ДИЗАЙН-ПРОЕКТ</h3>
+                    <p>Создадим детализированный план расстановки мебели, отделки и освещения.</p>
+                    <p class="service-tags">Идея. Планировка. Визуализация.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>ЧЕРНОВАЯ ОТДЕЛКА</h3>
+                    <p>Качественные подготовительные работы: выравнивание стен и полов, монтаж перегородок.</p>
+                    <p class="service-tags">Прочность. Геометрия. Надежность.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>ЧИСТОВАЯ ОТДЕЛКА</h3>
+                    <p>Идеальный финиш: поклейка обоев (включая 3D), покраска, укладка напольных покрытий.</p>
+                    <p class="service-tags">Эстетика. Аккуратность. Детали.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>МОНТАЖ КОММУНИКАЦИЙ</h3>
+                    <p>Профессиональная разводка электрики, сантехники и слаботочных сетей.</p>
+                    <p class="service-tags">Безопасность. Функциональность.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>УСТАНОВКА ДВЕРЕЙ И СВЕТА</h3>
+                    <p>Завершающий этап: монтаж межкомнатных дверей, установка розеток и осветительных приборов.</p>
+                    <p class="service-tags">Завершенность. Уют.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>АВТОРСКИЙ НАДЗОР</h3>
+                    <p>Контроль качества на всех этапах работ для точного соответствия проекту.</p>
+                    <p class="service-tags">Ваш представитель на объекте.</p>
+                </div>
+            </div>
+            
+            <!-- Блок контактов и призыва к действию -->
+            <div class="contact-section">
+                <h3 class="contact-title">ГОТОВЫ НАЧАТЬ РЕМОНТ?</h3>
+                <p class="contact-info">📞 +1 (234)5678900</p>
+                <p class="contact-info">✉ info@prof-rement.ru</p>
+                <p style="margin-bottom: 20px; opacity: 0.9;">Работаем по Москве и области</p>
+                <a href="https://wa.me/12345678900" class="cta-button">Бесплатная консультация в WhatsApp</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Плавная прокрутка к услугам при клике на индикатор
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.services-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Анимация появления карточек при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Применяем анимацию к карточкам услуг
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -3,30 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Элитный Дизайн Интерьеров</title>
+    <title>Евроремонт Под Ключ</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #e0d3b8;
-        }
+            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;}
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Верхняя часть - визитка */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -35,77 +91,60 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #e0d3b8;
+            color: white;
             border-radius: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
-            overflow: hidden;
+            margin-top: 70px;
         }
 
-        /* Элитная визитка */
         .visiting-card {
-            background: rgba(30, 30, 30, 0.85);
-            padding: 60px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
             border-radius: 15px;
-            color: #e0d3b8;
-            max-width: 600px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(120, 113, 93, 0.4);
-            position: relative;
-        }
-
-        .visiting-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #c9a96e, #d4b97a, #c9a96e);
+            color: #333;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .hero-title {
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: #d4b97a;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
             line-height: 1.2;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            line-height: 1.7;
-            color: #c9c0b0;
-            font-weight: 300;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
         }
 
         .company-name {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #d4b97a;
-            letter-spacing: 2px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e74c3c;
         }
 
         .company-tagline {
             font-style: italic;
-            font-size: 1.1rem;
-            color: #a89f8d;
-            border-top: 1px solid rgba(169, 159, 141, 0.3);
-            padding-top: 20px;
-            font-weight: 300;
+            font-size: 1rem;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
         }
 
         .scroll-indicator {
             position: absolute;
-            bottom: 40px;
+            bottom: 30px;
             animation: bounce 2s infinite;
-            color: #d4b97a;
+            color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             cursor: pointer;
         }
@@ -122,399 +161,412 @@
             }
         }
 
-        /* Нижняя часть - услуги */
         .services-section {
-            background: #1e1e1e;
-            padding: 80px 50px;
+            background: white;
+            padding: 60px 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(120, 113, 93, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
 
         .services-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 70px;
-            color: #d4b97a;
-            font-weight: 700;
-            letter-spacing: 1px;
-            position: relative;
-        }
-
-        .services-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #d4b97a, transparent);
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: bold;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 70px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .service-card {
-            background: #252525;
-            padding: 40px 35px;
+            background: #f8f9fa;
+            padding: 30px;
             border-radius: 15px;
-            border-left: 4px solid #d4b97a;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(212, 185, 122, 0.05) 0%, transparent 50%);
-            z-index: 0;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            color: #d4b97a;
-            margin-bottom: 20px;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
         .service-card p {
-            color: #c9c0b0;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-            font-weight: 300;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
         .service-tags {
             font-style: italic;
-            color: #a89f8d;
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
-        /* Контакты и CTA */
-        .contact-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 70px 50px;
+        .gallery-section {
+            background: white;
+            padding: 60px 40px;
             border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .gallery-title {
+            font-size: 2.5rem;
             text-align: center;
-            color: #e0d3b8;
-            border: 1px solid rgba(120, 113, 93, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1349&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .contact-title {
-            font-size: 2.4rem;
-            margin-bottom: 40px;
-            color: #d4b97a;
-            position: relative;
-            z-index: 1;
-            font-weight: 600;
-        }
-
-        .contact-info {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 25px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #e0d3b8;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 12px 25px;
-            background: rgba(212, 185, 122, 0.1);
-            border-radius: 25px;
-            border: 1px solid rgba(212, 185, 122, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: rgba(212, 185, 122, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 185, 122, 0.2);
-        }
-
-        .social-icon {
-            font-size: 1.4rem;
+            margin-bottom: 50px;
+            color: #333;
             font-weight: bold;
         }
 
-        .instagram-icon {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .tiktok-icon {
-            background: linear-gradient(45deg, #000000, #00f2ea, #ff0050);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4b97a, #c9a96e);
-            color: #1a1a1a;
-            padding: 18px 45px;
+            background: #ffd700;
+            color: #333;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
             margin-top: 20px;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(212, 185, 122, 0.3);
-            position: relative;
-            z-index: 1;
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            background: linear-gradient(135deg, #e5cc8e, #d4b97a);
+            background: #ffed4a;
             transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(212, 185, 122, 0.4);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        /* Дополнительные элементы роскоши */
-        .luxury-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #d4b97a;
-            color: #1a1a1a;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .testimonial {
-            font-style: italic;
-            text-align: center;
-            margin: 50px auto;
-            max-width: 800px;
-            padding: 30px;
-            border-left: 3px solid #d4b97a;
-            border-right: 3px solid #d4b97a;
-            background: rgba(30, 30, 30, 0.7);
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .testimonial::before, .testimonial::after {
-            content: '"';
-            font-size: 4rem;
-            color: #d4b97a;
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        .testimonial::before {
-            top: 10px;
-            left: 20px;
-        }
-
-        .testimonial::after {
-            bottom: -20px;
-            right: 20px;
-        }
-
-        .testimonial-author {
-            text-align: right;
-            margin-top: 20px;
-            color: #a89f8d;
-            font-weight: 500;
-        }
-
-        /* Адаптивность */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .visiting-card {
-                padding: 40px 25px;
+                padding: 30px 20px;
                 margin: 20px;
             }
             
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .services-section {
-                padding: 50px 25px;
+            .services-section, .gallery-section {
+                padding: 40px 20px;
             }
-            
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 200px;
+            }
+
             .contact-section {
-                padding: 50px 25px;
+                padding: 30px 20px;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
             }
             
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+            .company-name {
+                font-size: 1.5rem;
             }
             
-            .social-link {
-                width: 250px;
-                justify-content: center;
+            .services-title, .gallery-title {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PROF-REMENT</div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- Верхняя часть - визитка -->
-        <section class="hero-section">
+        <section class="hero-section" id="home">
             <div class="visiting-card">
-                <div class="luxury-badge">ЭКСКЛЮЗИВ</div>
-                <h1 class="hero-title">ЭЛИТНЫЙ ДИЗАЙН ИНТЕРЬЕРОВ</h1>
-                <p class="hero-subtitle">Создаем уникальные пространства для взыскательных клиентов. Индивидуальный подход, премиальные материалы и внимание к деталям.</p>
+                <h1 class="hero-title">ЕВРОРЕМОНТ ПОД КЛЮЧ</h1>
+                <p class="hero-subtitle">Превратим вашу квартиру в современное, комфортное пространство. Гарантия качества и точные сроки.</p>
                 
-                <div class="company-name">LUXE INTERIORS</div>
-                <p class="company-tagline">Искусство создавать роскошь</p>
+                <div class="company-name">PROF-REMENT</div>
+                <p class="company-tagline">Ваш комфорт — наша работа</p>
             </div>
             
             <div class="scroll-indicator">
                 <span style="font-size: 2rem;">👇</span>
-                <p>Наши услуги</p>
+                <p>Листайте вниз</p>
             </div>
         </section>
 
-        <!-- Нижняя часть - услуги -->
-        <section class="services-section">
-            <h2 class="services-title">ЭКСКЛЮЗИВНЫЕ УСЛУГИ</h2>
+        <section class="services-section" id="services">
+            <h2 class="services-title">НАШИ УСЛУГИ</h2>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>АВТОРСКИЙ ДИЗАЙН-ПРОЕКТ</h3>
-                    <p>Разработка уникальных интерьерных решений с учетом архитектурных особенностей пространства и пожеланий клиента.</p>
-                    <p class="service-tags">Эксклюзивность. Индивидуальность. Искусство.</p>
+                    <h3>ДИЗАЙН-ПРОЕКТ</h3>
+                    <p>Создадим детализированный план расстановки мебели, отделки и освещения.</p>
+                    <p class="service-tags">Идея. Планировка. Визуализация.</p>
                 </div>
                 
                 <div class="service-card">
-                    <h3>ПОДБОР ПРЕМИАЛЬНЫХ МАТЕРИАЛОВ</h3>
-                    <p>Эксклюзивный подбор отделочных материалов, мебели и декора от ведущих мировых производителей.</p>
-                    <p class="service-tags">Качество. Роскошь. Уникальность.</p>
+                    <h3>ЧЕРНОВАЯ ОТДЕЛКА</h3>
+                    <p>Качественные подготовительные работы: выравнивание стен и полов, монтаж перегородок.</p>
+                    <p class="service-tags">Прочность. Геометрия. Надежность.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>ЧИСТОВАЯ ОТДЕЛКА</h3>
+                    <p>Идеальный финиш: поклейка обоев (включая 3D), покраска, укладка напольных покрытий.</p>
+                    <p class="service-tags">Эстетика. Аккуратность. Детали.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>МОНТАЖ КОММУНИКАЦИЙ</h3>
+                    <p>Профессиональная разводка электрики, сантехники и слаботочных сетей.</p>
+                    <p class="service-tags">Безопасность. Функциональность.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>УСТАНОВКА ДВЕРЕЙ И СВЕТА</h3>
+                    <p>Завершающий этап: монтаж межкомнатных дверей, установка розеток и осветительных приборов.</p>
+                    <p class="service-tags">Завершенность. Уют.</p>
                 </div>
                 
                 <div class="service-card">
                     <h3>АВТОРСКИЙ НАДЗОР</h3>
-                    <p>Полный контроль реализации проекта на всех этапах для безупречного соответствия концепции.</p>
-                    <p class="service-tags">Внимание к деталям. Профессионализм.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>КОНСАЛТИНГ ПО ИНВЕСТИЦИЯМ В ИНТЕРЬЕР</h3>
-                    <p>Экспертная оценка инвестиционной привлекательности предметов искусства и дизайнерской мебели.</p>
-                    <p class="service-tags">Инвестиции. Ценность. Экспертиза.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>ПЕРСОНАЛИЗИРОВАННЫЙ СЕРВИС</h3>
-                    <p>Организация поставки эксклюзивных материалов и мебели из Европы, подбор антиквариата и предметов искусства.</p>
-                    <p class="service-tags">Эксклюзив. Индивидуальный подход.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>КОМПЛЕКСНОЕ ВЕДЕНИЕ ПРОЕКТА</h3>
-                    <p>Полное сопровождение от концепции до финальной сборки, включая подбор и координацию работы подрядчиков.</p>
-                    <p class="service-tags">Полный цикл. Безупречный результат.</p>
+                    <p>Контроль качества на всех этапах работ для точного соответствия проекту.</p>
+                    <p class="service-tags">Ваш представитель на объекте.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <h2 class="gallery-title">ГАЛЕРЕЯ НАШИХ РАБОТ</h2>
             
-            <!-- Отзыв клиента -->
-            <div class="testimonial">
-                <p>Работа с LUXE INTERIORS превзошла все ожидания. Они не просто создали дизайн-проект, а воплотили нашу мечту в реальность. Внимание к деталям, глубокое понимание наших потребностей и безупречный вкус — вот что отличает эту команду. Наш дом стал настоящим произведением искусства.</p>
-                <div class="testimonial-author">— Ольга С., заказчик проекта апартаментов в Москва-Сити</div>
-            </div>
-            
-            <!-- Блок контактов и призыва к действию -->
-            <div class="contact-section">
-                <h3 class="contact-title">ГОТОВЫ СОЗДАТЬ УНИКАЛЬНОЕ ПРОСТРАНСТВО?</h3>
-                <p class="contact-info">📞 +996(705)100524</p>
-                <p class="contact-info">✉ contact@luxe-interiors.ru</p>
-                
-                <!-- Социальные сети -->
-                <div class="social-links">
-                    <a href="https://instagram.com/https://www.instagram.com/1smarovna.01?igsh=eXdqZWM0Y2kxcWxy" class="social-link" target="_blank">
-                        <span class="social-icon instagram-icon">📷</span>
-                        Instagram
-                    </a>
-                    <a href="https://tiktok.com/https://www.tiktok.com/@1smarovna.01?_r=1&_t=ZS-91fSd2fnKc9" class="social-link" target="_blank">
-                        <span class="social-icon tiktok-icon">🎵</span>
-                        TikTok
-                    </a>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Современная гостиная">
+                    <div class="gallery-caption">
+                        <h3>Современная гостиная</h3>
+                        <p>Элегантный дизайн с акцентной стеной</p>
+                    </div>
                 </div>
                 
-                <p style="margin-bottom: 20px; opacity: 0.9; position: relative; z-index: 1;">Работаем с клиентами из Москвы, Лондона, Парижа и Дубая.</p>
-                <a href="https://wa.me/705100524" class="cta-button">Запись на консультацию в WhatsApp</a>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Кухня в стиле лофт">
+                    <div class="gallery-caption">
+                        <h3>Кухня в стиле лофт</h3>
+                        <p>Функциональность и стиль в одном пространстве</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Спальня с камином">
+                    <div class="gallery-caption">
+                        <h3>Спальня с камином</h3>
+                        <p>Уютная атмосфера для отдыха</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ванная комната премиум">
+                    <div class="gallery-caption">
+                        <h3>Ванная комната премиум</h3>
+                        <p>Изысканная отделка и современная сантехника</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Кабинет с панорамным окном">
+                    <div class="gallery-caption">
+                        <h3>Кабинет с панорамным окном</h3>
+                        <p>Идеальное рабочее пространство</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Прихожая с системой хранения">
+                    <div class="gallery-caption">
+                        <h3>Прихожая с системой хранения</h3>
+                        <p>Практичность и стиль в деталях</p>
+                    </div>
+                </div>
             </div>
+        </section>
+            
+        <section class="contact-section" id="contact">
+            <h3 class="contact-title">ГОТОВЫ НАЧАТЬ РЕМОНТ?</h3>
+            <p class="contact-info">📞 +996(705)100524</p>
+            <p class="contact-info">✉ info@prof-rement.ru</p>
+            <p style="margin-bottom: 20px; opacity: 0.9;">Работаем по кыргызстане и области</p>
+            <a href="https://wa.me/705100524" class="cta-button">Бесплатная консультация в WhatsApp</a>
         </section>
     </div>
 
     <script>
-        // Плавная прокрутка к услугам при клике на индикатор
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
             document.querySelector('.services-section').scrollIntoView({
                 behavior: 'smooth'
             });
         });
 
-        // Анимация появления карточек при скролле
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -529,12 +581,37 @@
             });
         }, observerOptions);
 
-        // Применяем анимацию к карточкам услуг
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        document.querySelectorAll('.service-card, .gallery-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
